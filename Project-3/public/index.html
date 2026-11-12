@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <title>Student Records | DecodeLabs Project 3</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><div class="brand-mark">D</div><div><strong>DecodeLabs</strong><span>PROJECT 3 · DATABASE INTEGRATION</span></div></div>
+    <span class="status"><i></i> DATABASE CONNECTED</span>
+  </header>
+  <main class="container">
+    <section class="hero">
+      <div><p class="eyebrow">STUDENT MANAGEMENT</p><h1>Student records</h1><p class="sub">Create, view, update and manage student information in one place.</p></div>
+      <button class="primary" id="addBtn">＋ Add student</button>
+    </section>
+    <section class="stats">
+      <article class="stat"><span>Total students</span><strong id="totalCount">0</strong><small>Saved records</small></article>
+      <article class="stat"><span>Database</span><strong>SQLite</strong><small>Persistent storage</small></article>
+      <article class="stat"><span>Operations</span><strong>CRUD</strong><small>Create · Read · Update · Delete</small></article>
+    </section>
+    <section class="panel">
+      <div class="panel-head"><div><h2>All students</h2><p>Search by name, matric number or department.</p></div>
+        <input id="searchInput" class="search" type="search" placeholder="⌕  Search students..." aria-label="Search students">
+      </div>
+      <div class="table-wrap">
+        <table><thead><tr><th>STUDENT</th><th>MATRIC NUMBER</th><th>DEPARTMENT</th><th>LEVEL</th><th>ACTIONS</th></tr></thead>
+          <tbody id="studentRows"><tr><td colspan="5" class="empty">Loading records...</td></tr></tbody>
+        </table>
+      </div>
+      <div class="panel-foot" id="recordCount">Showing 0 records</div>
+    </section>
+    <footer>Built for DecodeLabs Full Stack Development · Project 3</footer>
+  </main>
+
+  <div class="modal hidden" id="studentModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-head"><div><p class="eyebrow">STUDENT INFORMATION</p><h2 id="modalTitle">Add a student</h2></div><button class="icon-btn" id="closeModal" aria-label="Close">×</button></div>
+      <form id="studentForm">
+        <label>Full name<input name="full_name" required minlength="2" placeholder="e.g. Ada Okafor"></label>
+        <label>Matric number<input name="matric_no" required placeholder="e.g. 2026/001"></label>
+        <label>Department<input name="department" required placeholder="e.g. Computer Science"></label>
+        <label>Level<select name="level" required><option value="">Select level</option><option>100</option><option>200</option><option>300</option><option>400</option><option>500</option><option>600</option></select></label>
+        <label>Email <span class="optional">(optional)</span><input name="email" type="email" placeholder="student@example.com"></label>
+        <label>Phone <span class="optional">(optional)</span><input name="phone" type="tel" placeholder="+234..."></label>
+        <p class="form-message" id="formMessage" role="alert"></p>
+        <div class="form-actions"><button type="button" class="secondary" id="cancelBtn">Cancel</button><button type="submit" class="primary" id="saveBtn">Save student</button></div>
+      </form>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

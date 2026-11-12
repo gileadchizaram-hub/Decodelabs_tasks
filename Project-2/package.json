@@ -1,0 +1,15 @@
+{
+  "name": "decodelabs-project-2",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "DecodeLabs Project 2 - Backend API Development",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "decodelabs-project-3",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DecodeLabs Full Stack Development Project 3 - Student Record Management System",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "express": "^5.1.0",
+    "sql.js": "^1.13.0"
+  }
+}
